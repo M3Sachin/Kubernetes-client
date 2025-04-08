@@ -114,7 +114,9 @@ class LeaderElection:
 
         # create a default Election record for this candidate
         leader_election_record = LeaderElectionRecord(self.election_config.lock.identity,
-                                                     str(self.election_config.lease_duration), str(now), str(now))
+                                                     str(self.election_config.lease_duration),
+                                                      str(now),
+                                                      str(now))
 
         # A lock is not created with that name, try to create one
         if not lock_status:
