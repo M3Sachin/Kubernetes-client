@@ -187,5 +187,6 @@ class LeaderElection:
 
         self.observed_record = leader_election_record
         self.observed_time_milliseconds = int(time.time() * 1000)
+        print("hello".format(leader_election_record))
         logging.info("leader {} has successfully acquired lease".format(leader_election_record.holder_identity))
         return True
