@@ -176,7 +176,8 @@ class LeaderElection:
         return self.update_lock(leader_election_record)
 
     def update_lock(self,
-                    leader_election_record):
+                    leader_election_record
+                    ):
         # Update object with latest election record
         update_status = self.election_config.lock.update(self.election_config.lock.name,
                                                          self.election_config.lock.namespace,
