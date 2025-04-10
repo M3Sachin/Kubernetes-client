@@ -32,7 +32,9 @@ def _websocket_request(websocket_request, force_kwargs, api_method, *args, **kwa
     prev_request = api_client.request
     binary = kwargs.pop('binary', False)
     try:
-        api_client.request = functools.partial(websocket_request, configuration, binary=binary)
+        api_client.request = functools.partial(websocket_request,
+                                               configuration,
+                                               binary=binary)
         out = api_method(*args, **kwargs)
         # The api_client insists on converting this to a string using its representation, so we have
         # to do this dance to strip it of the b' prefix and ' suffix, encode it byte-per-byte (latin1),
