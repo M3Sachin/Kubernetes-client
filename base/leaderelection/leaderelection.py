@@ -164,7 +164,8 @@ class LeaderElection:
 
         # If This candidate is not the leader and lease duration is yet to finish
         if (self.election_config.lock.identity != self.observed_record.holder_identity
-                and self.observed_time_milliseconds + self.election_config.lease_duration * 1000 > int(now_timestamp * 1000)):
+                and self.observed_time_milliseconds + self.election_config.lease_duration * 1000 >
+                int(now_timestamp * 1000)):
             logging.info("yet to finish lease_duration, lease held by {} and has not expired".format(old_election_record.holder_identity))
             return False
 
