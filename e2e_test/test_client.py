@@ -127,7 +127,8 @@ class TestClient(unittest.TestCase):
         exec_command = ['/bin/sh',
                         '-c',
                         'echo -n "This is a test string" | gzip']
-        resp = stream(api.connect_get_namespaced_pod_exec, name, 'default',
+        resp = stream(api.connect_get_namespaced_pod_exec,
+                      name, 'default',
                       command=exec_command,
                       stderr=False, stdin=False,
                       stdout=True, tty=False,
