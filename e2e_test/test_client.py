@@ -123,7 +123,6 @@ class TestClient(unittest.TestCase):
         print('EXEC response : %s (%s)' % (repr(resp), type(resp)))
         self.assertIsInstance(resp, str)
         self.assertEqual(3, len(resp.splitlines()))
-
         exec_command = ['/bin/sh',
                         '-c',
                         'echo -n "This is a test string" | gzip']
