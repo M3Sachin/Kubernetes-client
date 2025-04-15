@@ -140,8 +140,10 @@ class TestClient(unittest.TestCase):
         exec_command = 'uptime'
         resp = stream(api.connect_post_namespaced_pod_exec, name, 'default',
                       command=exec_command,
-                      stderr=False, stdin=False,
-                      stdout=True, tty=False)
+                      stderr=False,
+                      stdin=False,
+                      stdout=True,
+                      tty=False)
         print('EXEC response : %s' % repr(resp))
         self.assertEqual(1, len(resp.splitlines()))
 
